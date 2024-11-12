@@ -1,0 +1,27 @@
+<?php
+  $dadosfuncionarios = array(
+    array('nome'=>'joao','idade' => 23, 'cidade'=>'Nova Friburgo'),
+    array('nome'=>'Maria','idade' => 25, 'cidade'=>'Nova Friburgo'),
+    array('nome'=>'josé','idade' => 22, 'cidade'=>'Bom Jardim'),
+  )
+  ?>
+  <html>
+    <head></head>
+    <body>
+      <?php
+      $Montartabela = function ($dados): string {
+      $retorno = "<table><tr><th>nome</th><th>Idade</th><th>cidade</th></tr>";
+      for($i = 0;$i < count($dados);$i++){
+        $retorno .= "<tr><td>".$dados[$i]['nome']. "</td>" .
+        "<td>".$dados[$i]['idade']."</td>" .
+        "<td>".$dados[$i]['cidade']."</td></tr>";
+      }  
+      $retorno .= "</table>";
+      return $retorno;
+      };
+      echo$Montartabela($dadosfunc);
+      ?>
+
+    </body>
+
+  </html>
